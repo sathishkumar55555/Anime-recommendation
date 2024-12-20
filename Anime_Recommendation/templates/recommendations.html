@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Recommended Animes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#2A2D30] text-[#00CC99] min-h-screen flex flex-col items-center">
+    <div class="text-center mt-10">
+      <h1 class="text-4xl font-bold">Recommended Anime</h1>
+      <a
+        href="{{ url_for('home') }}"
+        class="text-sm text-gray-400 hover:underline hover:text-[#00CC99] mt-2 block"
+      >
+        &lt; Go back to Home
+      </a>
+    </div>
+    <ul class="flex flex-col items-center mt-8 space-y-4">
+      {% for anime in animes.iterrows() %}
+      <li class="bg-[#1E2022] text-white rounded-lg px-6 py-3 shadow-lg hover:bg-[#1b1d1f] w-full max-w-md">
+        <p class="text-lg font-medium">{{ anime[1]['anime_name'] }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
